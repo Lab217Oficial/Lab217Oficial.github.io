@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="HELLO WORLD en una terminal, estilo punk monocromático">
+  <defs>
+    <pattern id="hz" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="24" fill="#efefef"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="420" fill="#0b0b0b"/>
+  <rect x="6" y="6" width="1188" height="408" fill="none" stroke="#efefef" stroke-width="3"/>
+
+  <rect x="40" y="40" width="1120" height="16" fill="url(#hz)"/>
+  <text x="40" y="104" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="24" fill="#8a8a8a" letter-spacing="2">lab217:~$ ./init --world</text>
+  <text x="1160" y="104" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="18" fill="#555">[ v2.17 ]</text>
+
+  <g font-family="Impact, 'Roboto Condensed', 'Arial Narrow', sans-serif" font-weight="700" fill="#ffffff">
+    <text x="40" y="250" font-size="150" textLength="760" lengthAdjust="spacingAndGlyphs">HELLO</text>
+    <text x="40" y="380" font-size="150" textLength="760" lengthAdjust="spacingAndGlyphs">WORLD</text>
+  </g>
+
+  <rect x="820" y="330" width="40" height="52" fill="#ff2a1a">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

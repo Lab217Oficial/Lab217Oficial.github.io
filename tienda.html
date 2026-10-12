@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tienda — LAB217</title>
+  <meta name="description" content="Pronto: compra los kits de Lab217 ensamblados y listos para usar. Todo sigue siendo open source y replicable.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__row">
+      <a class="brand" href="index.html" aria-label="Lab217 inicio">
+        <img src="assets/img/lab217-logo.svg" alt="Lab217">
+      </a>
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu">[ menú ]</button>
+      <nav class="nav__links" id="menu" aria-label="Principal">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#hacemos">Qué hacemos</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="flasher.html">Flasher</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">inicio</a> / tienda</div>
+      <h1>tienda</h1>
+      <p><span class="red">// Próximamente.</span> Estamos montando la tienda para que puedas
+         comprar nuestros kits <strong>ensamblados y probados</strong>, sin tener que soldar
+         nada. Y sí: todo seguirá siendo open source.</p>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="patches">
+        <article class="patch patch--intro">
+          <span class="tag">// El trato</span>
+          <h3>Libre para siempre, a la venta para quien lo prefiera</h3>
+          <p>Comprar un kit es la forma más fácil de apoyar al colectivo y de tener el fierro
+             en las manos sin pelearte con el cautín. Cada venta financia más hardware libre,
+             más documentación y más talleres.</p>
+        </article>
+        <article class="patch" data-n="[ 001 ]">
+          <h3>Replícalo gratis</h3>
+          <p>Cada proyecto trae esquemáticos, firmware y documentación en abierto. Si sabes soldar, arma el tuyo sin pedir permiso ni pagar un peso.</p>
+        </article>
+        <article class="patch" data-n="[ 002 ]">
+          <h3>O cómpralo ensamblado</h3>
+          <p>Kits montados, probados y flasheados, listos para usar. Ideal si quieres ahorrarte la fabricación y apoyar a un colectivo, no a una corporación.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vitrina (preview de futuros productos) -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">// Vitrina</span>
+        <h2>En la mira</h2>
+        <span class="line" aria-hidden="true"></span>
+        <a class="btn btn--ghost" href="proyectos.html">Ver proyectos →</a>
+      </div>
+      <div class="projects">
+
+        <article class="card">
+          <div class="card__top"><span class="name">Cerberus</span><span class="badge">Kit</span></div>
+          <div class="card__body">
+            <p>Watchdog USB ensamblado con OLED, listo para detectar BadUSB y USB Killer en tiempo real.</p>
+            <div class="tags"><span class="tag">RP2040</span><span class="tag">OLED</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#cerberus">Detalles de Cerberus</a><span class="buy soon" title="Disponible cuando abramos la tienda">Comprar · pronto</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card__top"><span class="name">Kraken Kit</span><span class="badge">Kit</span></div>
+          <div class="card__body">
+            <p>PCB multiprotocolo (NFC, Ethernet, Sub-GHz) montada sobre ESP32, para pentest inalámbrico.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">RF</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#kraken">Detalles de Kraken Kit</a><span class="buy soon" title="Disponible cuando abramos la tienda">Comprar · pronto</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card__top"><span class="name">HackPlate</span><span class="badge">Kit</span></div>
+          <div class="card__body">
+            <p>Estación de precalentado DIY armada y calibrada, para reflow y reparación de PCBs.</p>
+            <div class="tags"><span class="tag">Maker</span><span class="tag">Reflow</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#hackplate">Detalles de HackPlate</a><span class="buy soon" title="Disponible cuando abramos la tienda">Comprar · pronto</span></div>
+        </article>
+
+      </div>
+
+      <div class="callout warn" style="margin-top:34px">
+        <b>!La tienda todavía no abre.</b><br><br>
+        ¿Quieres que te avisemos cuando haya kits a la venta? Escríbenos a
+        <a class="red" href="mailto:hello@lab217.com.mx">hello@lab217.com.mx</a> con el asunto
+        <code>TIENDA</code> y te ponemos en la lista.
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <div class="hazard" aria-hidden="true"></div>
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="assets/img/lab217-logo.svg" alt="Lab217">
+          <p>Hardware y software open source, punk y orgullosamente mexicano. Romper para fortalecer.</p>
+        </div>
+        <div>
+          <h4>Navegar</h4>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="blog.html">Blog</a>
+          <a href="flasher.html">Flasher</a>
+        </div>
+        <div>
+          <h4>Comunidad</h4>
+          <a href="https://github.com/orgs/Lab217MX" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:hello@lab217.com.mx">Correo</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© <span id="y"></span> LAB217 · Hecho en México</span>
+        <span>[ status: online ] · CC BY-SA / GPL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

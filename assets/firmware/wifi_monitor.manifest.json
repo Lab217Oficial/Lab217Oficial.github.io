@@ -1,0 +1,13 @@
+{
+  "name": "Lab217 · WiFi Monitor (ESP32-S3)",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "wifi_monitor-esp32s3.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAB217 — Hardware libre desde México para todo el mundo</title>
+  <meta name="description" content="Lab217: hardware y software open source, punk y orgullosamente mexicano. Herramientas de seguridad, IoT y electrónica hackeable. Romper para fortalecer.">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="LAB217 — Romper para fortalecer">
+  <meta property="og:description" content="Hardware y software open source, punk y orgullosamente mexicano.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav__row">
+      <a class="brand" href="index.html" aria-label="Lab217 inicio">
+        <img src="assets/img/lab217-logo.svg" alt="Lab217">
+      </a>
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu">[ menú ]</button>
+      <nav class="nav__links" id="menu" aria-label="Principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#hacemos">Qué hacemos</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contacto">Contacto</a>
+        <a href="flasher.html">Flasher</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-bottom:none">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="marks">
+        <span>[ LAB//217 · MX ]</span>
+        <span>[ OPEN SOURCE HARDWARE ]</span>
+        <span>[ EST. 2025 ]</span>
+      </div>
+      <h1><span class="glitch" data-text="lab217">lab217</span></h1>
+      <p class="hero__tag">Hardware libre desde México <span class="red">/</span> para todo el mundo</p>
+      <p class="hero__sub">
+        Diseñamos y fabricamos hardware y software <strong>100% open source</strong> para
+        ciberseguridad, pentest e IoT. Sin cajas negras, sin candados propietarios.
+        Rompemos para entender, y entendemos para fortalecer.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--red" href="proyectos.html">Ver proyectos</a>
+        <a class="btn btn--ghost" href="#nosotros">Conócenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>ROMPER PARA FORTALECER</span><span>OPEN SOURCE 100%</span>
+      <span>HARDWARE HACKEABLE</span><span>HECHO EN MÉXICO</span>
+      <span>SIN CAJAS NEGRAS</span><span>DE LA COMUNIDAD PARA LA COMUNIDAD</span>
+      <span>ROMPER PARA FORTALECER</span><span>OPEN SOURCE 100%</span>
+      <span>HARDWARE HACKEABLE</span><span>HECHO EN MÉXICO</span>
+      <span>SIN CAJAS NEGRAS</span><span>DE LA COMUNIDAD PARA LA COMUNIDAD</span>
+    </div>
+  </div>
+
+  <!-- ============ NOSOTROS ============ -->
+  <section id="nosotros">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">01 //</span>
+        <h2>¿Quiénes<br>somos?</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="about">
+        <div>
+          <p class="lead">Somos un colectivo punk de hardware libre. Estudiantes, profesionales y curiosos de la seguridad haciendo fierros abiertos.</p>
+          <p>
+            Lab217 nace de una idea simple y rebelde: la mejor forma de proteger algo es
+            entender cómo se rompe. Construimos herramientas de seguridad, dispositivos IoT
+            y electrónica DIY que <strong>cualquiera puede leer, modificar y fabricar</strong>.
+          </p>
+          <p>
+            Compartimos firmwares, esquemáticos y bibliotecas porque creemos que el
+            conocimiento no debería vivir tras un candado. Somos underground, pero no
+            secretos: todo lo que hacemos vive en abierto.
+          </p>
+          <blockquote class="quote">
+            “No es para criminales. Es para que los buenos estén un paso adelante.”
+          </blockquote>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>100%</b><span>Open Source</span></div>
+          <div class="stat"><b>7+</b><span>Proyectos activos</span></div>
+          <div class="stat"><b>MX</b><span>Hecho en México</span></div>
+          <div class="stat"><b>0</b><span>Cajas negras</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ HACEMOS ============ -->
+  <section id="hacemos">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">02 //</span>
+        <h2>Qué hacemos</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="patches">
+        <article class="patch patch--intro">
+          <span class="tag">// El taller</span>
+          <h3>Somos pocos y hacemos mucho con las manos</h3>
+          <p>Nada de humo: cada cosa nace de una necesidad real y termina en abierto para que la uses, la rompas y la mejores. </p>
+        </article>
+        <article class="patch" data-n="[ 001 ]">
+          <h3>Hardware libre para pentest</h3>
+          <p>Diseñamos placas y dispositivos de auditoría y liberamos hasta el último esquemático para que puedas revisar cómo están hechos y armar tu propia versión.</p>
+          <a class="stretch" href="proyectos.html" aria-label="Ver hardware de pentest"></a>
+        </article>
+        <article class="patch" data-n="[ 002 ]">
+          <h3>Firmware y bibliotecas</h3>
+          <p>Programamos en C, Python y MicroPython para RP2040 y ESP32. Subimos el código y dejamos que le metas mano. Sin secretos, sin magia y sin pedir permiso para modificarlo.</p>
+          <a class="stretch" href="proyectos.html" aria-label="Ver firmware open source"></a>
+        </article>
+        <article class="patch" data-n="[ 003 ]">
+          <h3>Seguridad e IoT</h3>
+          <p>Hardware sin adornos: circuitos, firmware y pruebas en condiciones reales. Si falla, se depura; si se puede mejorar, se modifica.</p>
+          <a class="stretch" href="proyectos.html" aria-label="Ver seguridad e IoT"></a>
+        </article>
+        <article class="patch" data-n="[ 004 ]">
+          <h3>Herramientas maker</h3>
+          <p>Hotplates, estaciones de reflow y herramientas para el taller. Hechas por makers para otros makers, con precios más accesibles y sin tener que gastar una fortuna en equipo profesional.</p>
+          <a class="stretch" href="proyectos.html" aria-label="Ver herramientas maker"></a>
+        </article>
+        <article class="patch" data-n="[ 005 ]">
+          <h3>Comunidad y aprendizaje</h3>
+          <p>Compartimos talleres, apuntes y consejos para cuando algo no te salga. Aquí aprendemos probando, equivocándonos y compartiendo lo que nos funciona. Todos empezamos desde cero.</p>
+          <a class="stretch" href="blog.html" aria-label="Ir al blog"></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS (preview) ============ -->
+  <section id="proyectos">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">03 //</span>
+        <h2>Proyectos</h2>
+        <span class="line" aria-hidden="true"></span>
+        <a class="btn btn--ghost" href="proyectos.html">Ver todos →</a>
+      </div>
+      <div class="projects">
+
+        <article class="card">
+          <div class="card__top"><span class="name">Cerberus</span><span class="badge badge--wip">En desarrollo</span></div>
+          <div class="card__media"><img src="assets/img/projects/cerberus-photo.jpg" alt="Placa roja de Cerberus con su pantalla OLED encendida" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <p>Watchdog USB que detecta y diferencia dispositivos maliciosos (Rubber Ducky, USB Killer) mostrando la actividad en tiempo real.</p>
+            <div class="tags"><span class="tag">RP2040</span><span class="tag">USB</span><span class="tag">BadUSB</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#cerberus">Detalles de Cerberus</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card__top"><span class="name">Kraken Kit</span><span class="badge badge--wip">En desarrollo</span></div>
+          <div class="card__media card__media--logo"><img src="assets/img/projects/kraken-logo.png" alt="" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <p>PCB que expande el ESP32 Bit Pirate con módulos NFC, Ethernet y Sub-GHz. Pentest de protocolos y RF en un solo kit.</p>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">NFC</span><span class="tag">Sub-GHz</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#kraken">Detalles de Kraken Kit</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card__top"><span class="name">HackPlate</span><span class="badge badge--wip">En desarrollo</span></div>
+          <div class="card__media"><img src="assets/img/projects/hackplate-render.jpg" alt="Render 3D de la carcasa de HackPlate con pantalla y perilla de control" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <p>Estación de precalentado open source y DIY para soldadura y reparación de PCBs. Confiable, económica y hackeable.</p>
+            <div class="tags"><span class="tag">Maker</span><span class="tag">Reflow</span><span class="tag">DIY</span></div>
+          </div>
+          <div class="card__foot"><a href="proyectos.html#hackplate">Detalles de HackPlate</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLASHER (bonus, no principal) ============ -->
+  <section id="flasher-bonus" style="padding-block:clamp(32px,5vh,56px)">
+    <div class="container">
+      <div class="bonus">
+        <span class="bonus__tag">// Bonus</span>
+        <div>
+          <h3>Flashea nuestro firmware desde el navegador</h3>
+          <p>¿Toca flashear? Conecta la placa por USB y carga el firmware desde el navegador. Sin IDEs ni instalaciones extra.
+             Entras, conectas y flasheas.</p>
+        </div>
+        <a class="btn btn--ghost" href="flasher.html">Abrir el flasher</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG (preview) ============ -->
+  <section id="blog">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">04 //</span>
+        <h2>Blog</h2>
+        <span class="line" aria-hidden="true"></span>
+        <a class="btn btn--ghost" href="blog.html">Ver todo →</a>
+      </div>
+      <div class="posts">
+        <!-- POSTS:START (generado por tools/lab217.py — no editar a mano) -->
+        <a class="post-row" href="posts/2026-09-23-hola-mundo.html">
+          <time datetime="2026-09-23">2026.09.23</time>
+          <div>
+            <h3>Hello World</h3>
+            <p class="muted">El primer commit de Lab217 al mundo. Quiénes somos, por qué existimos y la promesa de un colectivo de hardware de seguridad abierto hecho desde LATAM.</p>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <!-- POSTS:END -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">05 //</span>
+        <h2>Contacto</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="contact">
+        <div>
+          <p class="big">¿Colaboras, rompes<br>o construyes?</p>
+          <p class="muted">Escríbenos. Buscamos gente curiosa, patrocinadores y makers con ganas de fierros abiertos.</p>
+          <a class="mail" href="mailto:hello@lab217.com.mx">hello@lab217.com.mx</a>
+        </div>
+        <div class="social">
+          <span class="social__label">// Redes</span>
+          <a href="https://github.com/orgs/Lab217MX" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+          <a href="https://www.instagram.com/lab_217/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="hazard" aria-hidden="true"></div>
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="assets/img/lab217-logo.svg" alt="Lab217">
+          <p>Hardware y software open source, punk y orgullosamente mexicano. Romper para fortalecer.</p>
+        </div>
+        <div>
+          <h4>Navegar</h4>
+          <a href="#nosotros">Nosotros</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="blog.html">Blog</a>
+          <a href="flasher.html">Flasher</a>
+        </div>
+        <div>
+          <h4>Comunidad</h4>
+          <a href="https://github.com/orgs/Lab217MX" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:hello@lab217.com.mx">Correo</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© <span id="y"></span> LAB217 · Hecho en México</span>
+        <span>[ status: online ] · CC BY-SA / GPL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

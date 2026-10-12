@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flasher web — LAB217</title>
+  <meta name="description" content="Flasher universal de Lab217: consulta los releases oficiales de GitHub y flashea firmware de ESP32 directo desde el navegador, sin instalar nada.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- esp-web-tools: componente de flasheo por Web Serial (se carga en vivo desde CDN) -->
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__row">
+      <a class="brand" href="index.html" aria-label="Lab217 inicio">
+        <img src="assets/img/lab217-logo.svg" alt="Lab217">
+      </a>
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu">[ menú ]</button>
+      <nav class="nav__links" id="menu" aria-label="Principal">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#hacemos">Qué hacemos</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="flasher.html">Flasher</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">inicio</a> / flasher</div>
+      <h1>flasher</h1>
+      <p><span class="red">// Función bonus.</span> El flasher universal de Lab217: consulta en vivo
+         los <strong>releases oficiales de GitHub</strong>, elige el firmware de cualquier proyecto
+         y escríbelo en tu placa desde el navegador. Sin IDEs, sin dramas.</p>
+      <p class="supported" role="status" style="margin-top:16px">
+        <span class="dot" id="serial-dot" aria-hidden="true"></span>
+        <span id="serial-status">Comprobando compatibilidad del navegador…</span>
+      </p>
+      <p class="muted" id="catalog-status" role="status" style="margin-top:8px;font-family:var(--mono);font-size:13px">
+        Consultando los releases oficiales de Lab217 en GitHub…
+      </p>
+    </div>
+  </section>
+
+  <!-- Aviso navegador no compatible -->
+  <section id="unsupported" style="display:none;border-bottom:none">
+    <div class="container">
+      <div class="callout warn">
+        <b>!TU NAVEGADOR NO SOPORTA WEB SERIAL</b><br><br>
+        El flasheo por navegador usa la <b>Web Serial API</b>, disponible en
+        <b>Chrome, Edge y Opera de escritorio</b> (no en Firefox ni Safari, ni en la
+        mayoría de navegadores móviles).<br><br>
+        Abre esta página en uno de esos navegadores, o usa el método manual (UF2 / esptool)
+        descrito más abajo.
+      </div>
+    </div>
+  </section>
+
+  <!-- ESP: Web Serial -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">A //</span>
+        <h2>ESP32 / ESP8266 — flasheo directo</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="flash-wrap" id="esp-list">
+        <div class="fw">
+          <span class="chip">[ CHIP: ESP32-S3 ]</span>
+          <h3>WiFi Monitor</h3>
+          <p class="muted">Firmware de monitoreo Wi-Fi para ESP32-S3 (proyecto AHAU CTF). Se flashea completo en el offset 0x0.</p>
+          <ol>
+            <li>Conecta el ESP32-S3 por USB.</li>
+            <li>Pulsa <b>Instalar</b> y elige el puerto serie.</li>
+            <li>Si no aparece, mantén <code>BOOT</code> y toca <code>RESET</code> para entrar en modo descarga.</li>
+          </ol>
+          <div>
+            <esp-web-install-button manifest="assets/firmware/wifi_monitor.manifest.json">
+              <button slot="activate" class="btn btn--red">Instalar WiFi Monitor</button>
+              <span slot="unsupported">Navegador no compatible — mira el método manual.</span>
+              <span slot="not-allowed">Necesitas servir la página por HTTPS o localhost.</span>
+            </esp-web-install-button>
+          </div>
+          <div class="callout" style="margin-top:auto">
+            <a class="red" href="assets/firmware/wifi_monitor-esp32s3.bin" download>Descargar .bin</a>
+            &nbsp;·&nbsp; SHA y notas de versión próximamente.
+          </div>
+        </div>
+
+        <div class="fw">
+          <span class="chip">[ CHIP: ESP32 ]</span>
+          <h3>Kraken Kit — Bit Pirate</h3>
+          <p class="muted">El firmware base del Kraken es el <strong>ESP32 Bit Pirate</strong>,
+            un proyecto hermano de la comunidad. Se flashea desde su webflasher oficial
+            y los módulos NFC, Ethernet y Sub-GHz van encima.</p>
+          <div class="fw__actions">
+            <a class="btn btn--red" href="https://geo-tp.github.io/ESP32-Bit-Pirate/webflasher/" target="_blank" rel="noopener">Abrir flasher del Bit Pirate ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="callout" id="esp-empty" style="display:none;margin-top:2px">
+        <b>// CÓMO APARECE UN FIRMWARE AQUÍ</b><br><br>
+        Cada proyecto publica sus releases oficiales en GitHub. Para que un firmware ESP sea
+        flasheable desde esta página, el repo debe incluir en la carpeta <code>firmware/</code>
+        del tag del release un <code>manifest.json</code> junto a sus <code>.bin</code>
+        (la convención exacta está al final de la página).
+      </div>
+    </div>
+  </section>
+
+  <!-- RP2040 / RP2350: UF2 -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">B //</span>
+        <h2>RP2040 / RP2350 (Pico) — modo BOOTSEL</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="flash-wrap" id="uf2-list">
+        <div class="fw">
+          <span class="chip">[ MÉTODO ]</span>
+          <h3>Arrastrar y soltar .uf2</h3>
+          <p class="muted">Las placas RP2040 y RP2350 (Raspberry Pi Pico y Pico 2) no se flashean
+            por Web Serial: se montan como una memoria USB. Es aún más simple.</p>
+          <ol>
+            <li>Desconecta la Pico.</li>
+            <li>Mantén presionado el botón <code>BOOTSEL</code>.</li>
+            <li>Conéctala por USB sin soltar el botón.</li>
+            <li>Aparecerá una unidad <code>RPI-RP2</code>.</li>
+            <li>Copia el archivo <code>.uf2</code> del proyecto a esa unidad.</li>
+            <li>La placa se reinicia sola con el nuevo firmware. Listo.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="callout" id="uf2-empty" style="display:none;margin-top:2px">
+        <b>// CÓMO APARECE UN FIRMWARE AQUÍ</b><br><br>
+        Cuando un proyecto publique su release oficial en GitHub con un archivo
+        <code>.uf2</code> adjunto, aparecerá aquí automáticamente como tarjeta de descarga.
+      </div>
+    </div>
+  </section>
+
+  <!-- Seguridad -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">! //</span>
+        <h2>Seguridad</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="callout warn">
+        <b>!FLASHEA BAJO TU PROPIO RIESGO.</b><br><br>
+        Nunca escribas firmware en el que no confíes. Flashear reemplaza el software de tu
+        dispositivo y puede borrar datos. Todo nuestro firmware es open source y verificable
+        antes de instalarlo. En Linux quizá necesites permisos sobre el puerto serie
+        (grupo <code>dialout</code> / reglas udev).
+      </div>
+    </div>
+  </section>
+
+  <!-- Convención de publicación -->
+  <section style="border-bottom:none">
+    <div class="container">
+      <div class="sec-head">
+        <span class="idx">//</span>
+        <h2>Publicar un firmware</h2>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <div class="callout">
+        <b>ESP — flasheable por Web Serial.</b><br>
+        En el repo del proyecto, en la carpeta <code>firmware/</code> del tag del release:
+        el <code>manifest.json</code> y los <code>.bin</code> que referencia.<br>
+        <code>{ "name": "Mi Firmware", "builds": [ { "chipFamily": "ESP32-S3", "parts": [ { "path": "mi-firmware.bin", "offset": 0 } ] } ] }</code><br><br>
+        <b>RP2040 / RP2350 — descargable.</b><br>
+        Adjunta el <code>.uf2</code> al release de GitHub. Nada más: aparece solo en esta página.<br><br>
+        El flasheo corre 100% en tu equipo vía Web Serial. Lab217 no recibe tus datos
+        ni el contenido de tu placa.
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <div class="hazard" aria-hidden="true"></div>
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="assets/img/lab217-logo.svg" alt="Lab217">
+          <p>Hardware y software open source, punk y orgullosamente mexicano. Romper para fortalecer.</p>
+        </div>
+        <div>
+          <h4>Navegar</h4>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="blog.html">Blog</a>
+          <a href="flasher.html">Flasher</a>
+        </div>
+        <div>
+          <h4>Comunidad</h4>
+          <a href="https://github.com/orgs/Lab217MX" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:hello@lab217.com.mx">Correo</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© <span id="y"></span> LAB217 · Hecho en México</span>
+        <span>[ status: online ] · CC BY-SA / GPL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/flasher.js"></script>
+</body>
+</html>
